@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  description: GREETING-SERVICE
+  version: "1.0.0"
+  title: GREETING-SERVICE API
+tags:
+  - name: greeting
+paths:
+  /hello:
+    get:
+      tags:
+        - greeting
+      summary: greeting
+      operationId: getGreeting
+      responses:
+        '200':
+          description: get greeting
+          content:
+            application/json:
+              schema:
+                type: string
+                default: 'Hello!!!'
