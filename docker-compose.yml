@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  eureka:
+    image: eureka:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+  service:
+    image: service:0.0.1-SNAPSHOT
+    ports:
+      - "9303:9303"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka
